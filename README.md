@@ -175,7 +175,7 @@ jwt.secret= {jwt-secret}
 
 ## Database Schema
 ![](images/DB%20Banking%20Gamification.png)
-For detail information, take a look at [Database Schema]([{db-schema-link}](https://dbdiagram.io/d/60a86e29b29a09603d16040e))
+For detail information, take a look at [Database Schema](https://dbdiagram.io/d/60a86e29b29a09603d16040e)
 
 
 ## API Documentation
