@@ -1,34 +1,69 @@
 # {project-name} Backend Team B Homey
 Hello there! Welcome to our playground. We're here for having fun.
+
+
+
 ## *Need to do*:
 1. java openjdk version✔️
 2. spring version✔️
 3. gitignore inside
-4. example of application.properties
+4. example of application.properties ✔️
 5. folder purpose
-6. design pattern what to choose?
-7. clean code especially naming conventions
-8. 1 class 1 method 1 purpose
+6. design pattern what to choose?✔️
+7. clean code especially naming conventions✔️
+8. 1 class 1 method 1 purpose✔️
 9. how auth will works?
-10. getting started
+10. getting started✔️
 11. git flow✔️
 12. credentials config✔️
 13. database schema✔️ 
 14. api docs✔️
 15. docker command
 16. project description✔️
-17. folder structure
+17. folder structure ✔️
 18. folder purpose
-19. table of contents
-## What we're developing <br>{project-name}
-descripton...
-## What tech stack we're using
-1. Java openjdk version 16, here for resources [Openjdk Archive](https://jdk.java.net/archive/)<br> Check if java version is openjdk:
+19. table of contents✔️
+20. code style✔️
+
+## What we're developing, {project-name}
+description...
+
+## Table of Contents
+- [{project-name} Backend Team B Homey](#project-name-backend-team-b-homey)
+  - [*Need to do*:](#need-to-do)
+  - [What we're developing, {project-name}](#what-were-developing-project-name)
+  - [Table of Contents](#table-of-contents)
+  - [Tech Stack](#tech-stack)
+  - [Git Work Flow](#git-work-flow)
+    - [Clone Remote Repository](#clone-remote-repository)
+    - [Create Branch](#create-branch)
+    - [Add Changes](#add-changes)
+    - [Commit Changes](#commit-changes)
+    - [Read History](#read-history)
+    - [Check Remote Repository](#check-remote-repository)
+    - [Push Changes](#push-changes)
+    - [Pull Changes](#pull-changes)
+    - [Keep Up-to-date With Branch Develop](#keep-up-to-date-with-branch-develop)
+    - [How to merge request](#how-to-merge-request)
+  - [Code Style](#code-style)
+  - [Credentials Configuration](#credentials-configuration)
+    - [Inside application.properties](#inside-applicationproperties)
+  - [Architecture Structure](#architecture-structure)
+  - [Architecture Purpose](#architecture-purpose)
+  - [Database Schema](#database-schema)
+  - [API Documentation](#api-documentation)
+
+
+
+
+
+## Tech Stack
+- Java openjdk version 16, here for resources [Openjdk Archive](https://jdk.java.net/archive/)<br> Check if java version is openjdk:
 ```
 java -version
 ```
-2. Spring version 2.4.5 with maven project
-3. Dependencies: 
+- Spring version 2.5.0 with maven project
+- Dependencies: 
    - Spring Web 
    - PostgreSQL
    - Spring Data JPA
@@ -37,54 +72,68 @@ java -version
    - JJWT
    - ModelMapper
    - Springfox Swagger
+
+
 ## Git Work Flow
-### 1. How to clone our remote repository
+### Clone Remote Repository
 ```bash
 git clone {git-url}
 ```
-### 2. How to create branch feature and checkout from branch develop
+### Create Branch
 ```bash
 git checkout -b feature/{feature-name}
 ```
 *Kindly remember to always create new feature and not making changes in branch develop*
-### 3. How to add changes to staging area
+### Add Changes
 ```bash
 git add .
 git add {file-name}
 ```
-### 4. How to save changes from staging area
+### Commit Changes
 ```bash
 git commit -m "message"
 ```
-### 5. How to check previous changes
+### Read History
 ```bash
 git log
 ```
-### 6. How to check list of remote repositories
+### Check Remote Repository
 ```bash
 git remote -v
 ```
-### 7. How to push feature to remote repository
+### Push Changes
 ```bash
 git push origin feature/{feature-name}
 ```
-### 8. How to update from remote repostiory into local repository
+### Pull Changes
 ```bash
 git pull develop
 ```
-### 9. How to keep changes up-to-date with branch develop into branch feature
+### Keep Up-to-date With Branch Develop
 from branch feature:
 ```bash
 git merge develop 
 ```
-### 10. How to merge request
-1. Create new merge request
-2. Select from `branch feature` into `branch develop`
-3. Fill title and description with meaningful explanation
-4. Select asignees as yours and reviewers as tech lead and backend facilitator
-5. Check mark✔️ *delete source branch when merge request is accepted*
+### How to merge request
+- Create new merge request
+- Select from `branch feature` into `branch develop`
+- Fill title and description with meaningful explanation
+- Select asignees as yours and reviewers as tech lead and backend facilitator
+- Check mark✔️ *delete source branch when merge request is accepted*
+
+
+## Code Style
+We're free to code using clean architecture but kindly remember the code principles:<br>
+- KISS (Keep It Simple Stupid) 
+- DRY (Don't Repeat Yourself)
+- Single Responsibility
+- Separation of Concerns
+- YAGNI (You Aren't Gonna Need It)
+- Refactor
+
+
 ## Credentials Configuration
-### 1. Inside application.properties
+### Inside application.properties
 File location: `src/main/resources/application.properties`
 ```properties
 ## Spring DATASOURCE (DataSourceAutoConfiguration & DataSourceProperties)
@@ -102,11 +151,33 @@ spring.jpa.hibernate.ddl-auto= {create/create-drop/validate/update}
 jwt.secret= {jwt-secret}
 ```
 *Kindly remember to add this to .gitignore, so it won't be push to our repository*
-## Folder Structure
-## Folder Purpose
+
+
+## Architecture Structure
+```
+├── .mvn/wrapper
+├── src
+|   ├── main
+|   |   ├── java/com/projects
+|   |   |   ├── controller
+|   |   |   ├── model
+|   |   |   ├── exception
+|   |   |   ├── repository
+|   |   |   ├── service
+|   |   |   ├── util
+|   |   ├── recources
+|   |   |   ├── application.properties
+|   ├── test/java/com/projects
+```
+
+## Architecture Purpose
+
+
 ## Database Schema
-![]({image-db-schema-link})
-For detail information, take a look at [Database Schema]({db-schema-link})
+![](images/DB%20Banking%20Gamification.png)
+For detail information, take a look at [Database Schema]([{db-schema-link}](https://dbdiagram.io/d/60a86e29b29a09603d16040e))
+
+
 ## API Documentation
 We're using [Swagger For API Docs]({swagger-link}), look for further information
 
