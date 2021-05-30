@@ -1,37 +1,14 @@
-# {project-name} Backend Team B Homey
+# Monola Backend Team B Homey
 Hello there! Welcome to our playground. We're here for having fun.
 
 
 
-## *Need to do*:
-1. java openjdk version✔️
-2. spring version✔️
-3. gitignore inside
-4. example of application.properties ✔️
-5. folder purpose
-6. design pattern what to choose?✔️
-7. clean code especially naming conventions✔️
-8. 1 class 1 method 1 purpose✔️
-9. how auth will works?
-10. getting started✔️
-11. git flow✔️
-12. credentials config✔️
-13. database schema✔️ 
-14. api docs✔️
-15. docker command
-16. project description✔️
-17. folder structure ✔️
-18. folder purpose ✔️
-19. table of contents✔️
-20. code style✔️
-21. protecting branch master and develop
 
 ## What we're developing, Monola
-description...
+Description loading...
 
 ## Table of Contents
-- [{project-name} Backend Team B Homey](#project-name-backend-team-b-homey)
-  - [*Need to do*:](#need-to-do)
+- [Monola Backend Team B Homey](#monola-backend-team-b-homey)
   - [What we're developing, Monola](#what-were-developing-monola)
   - [Table of Contents](#table-of-contents)
   - [Tech Stack](#tech-stack)
@@ -91,7 +68,7 @@ or
 git branch fixing/{fixing-name}
 git checkout fixing/{fixing-name}
 ```
-*Kindly remember to always create new feature and not making changes in branch develop*
+*Kindly remember to always create new feature and not making changes in branch develop and master*
 ### Add Changes
 ```bash
 git add .
@@ -132,7 +109,7 @@ git merge develop
 
 
 ## Code Style
-We're free to code using clean architecture but kindly remember the code principles:<br>
+With **Clean Architecture** as a design pattern, we're free to code but kindly remember the code principles:<br>
 - KISS (Keep It Simple Stupid) 
 - DRY (Don't Repeat Yourself)
 - Single Responsibility
