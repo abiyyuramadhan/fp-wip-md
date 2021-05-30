@@ -21,17 +21,18 @@ Hello there! Welcome to our playground. We're here for having fun.
 15. docker command
 16. project description✔️
 17. folder structure ✔️
-18. folder purpose
+18. folder purpose ✔️
 19. table of contents✔️
 20. code style✔️
+21. protecting branch master and develop
 
-## What we're developing, {project-name}
+## What we're developing, Monola
 description...
 
 ## Table of Contents
 - [{project-name} Backend Team B Homey](#project-name-backend-team-b-homey)
   - [*Need to do*:](#need-to-do)
-  - [What we're developing, {project-name}](#what-were-developing-project-name)
+  - [What we're developing, Monola](#what-were-developing-monola)
   - [Table of Contents](#table-of-contents)
   - [Tech Stack](#tech-stack)
   - [Git Work Flow](#git-work-flow)
@@ -43,8 +44,8 @@ description...
     - [Check Remote Repository](#check-remote-repository)
     - [Push Changes](#push-changes)
     - [Pull Changes](#pull-changes)
-    - [Keep Up-to-date With Branch Develop](#keep-up-to-date-with-branch-develop)
-    - [How to merge request](#how-to-merge-request)
+    - [Integrate Changes Between Branches](#integrate-changes-between-branches)
+    - [How to Merge Request](#how-to-merge-request)
   - [Code Style](#code-style)
   - [Credentials Configuration](#credentials-configuration)
     - [Inside application.properties](#inside-applicationproperties)
@@ -80,8 +81,15 @@ java -version
 git clone {git-url}
 ```
 ### Create Branch
+For branch feature: `feature/{feature-name}`<br>
+For branch fixing: `fixing/{fixing-name}`<br>
 ```bash
 git checkout -b feature/{feature-name}
+```
+or
+```bash
+git branch fixing/{fixing-name}
+git checkout fixing/{fixing-name}
 ```
 *Kindly remember to always create new feature and not making changes in branch develop*
 ### Add Changes
@@ -109,17 +117,18 @@ git push origin feature/{feature-name}
 ```bash
 git pull develop
 ```
-### Keep Up-to-date With Branch Develop
-from branch feature:
+### Integrate Changes Between Branches
+Making branch feature keep up-to-date with commits from branch develop<br>
+Preventing merge conflict when merge request<br>
+From branch feature:
 ```bash
 git merge develop 
 ```
-### How to merge request
+### How to Merge Request
 - Create new merge request
 - Select from `branch feature` into `branch develop`
 - Fill title and description with meaningful explanation
-- Select asignees as yours and reviewers as tech lead and backend facilitator
-- Check mark✔️ *delete source branch when merge request is accepted*
+- Select asignees as yours and reviewers as tech lead
 
 
 ## Code Style
@@ -136,18 +145,16 @@ We're free to code using clean architecture but kindly remember the code princip
 ### Inside application.properties
 File location: `src/main/resources/application.properties`
 ```properties
-## Spring DATASOURCE (DataSourceAutoConfiguration & DataSourceProperties)
 spring.datasource.url= jdbc:postgresql://localhost:5432/{database-name}
 spring.datasource.username= {postgresql-username} 
 spring.datasource.password= {postgresql-password}
 
-# The SQL dialect makes Hibernate generate better SQL for the chosen database
-spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.PostgreSQLDialect
 
-# Hibernate ddl auto (create, create-drop, validate, update)
+spring.jpa.properties.hibernate.dialect= org.hibernate.dialect.PostgreSQLDialect
+spring.jpa.properties.hibernate.format_sql= true
 spring.jpa.hibernate.ddl-auto= {create/create-drop/validate/update}
+spring.jpa.show-sql= true
 
-# JWT SECRET
 jwt.secret= {jwt-secret}
 ```
 *Kindly remember to add this to .gitignore, so it won't be push to our repository*
@@ -171,6 +178,16 @@ jwt.secret= {jwt-secret}
 ```
 
 ## Architecture Purpose
+- `main`
+  - `java/com/projects`
+    - `controller` represents as a place for interaction between applications and we're defining endpoint to provide client side.
+    -  `model` represents as a place to define databases info. For example table, column, relations.
+    -  `exception` represents as a place that all custom handling errors we made to prevent unwanted things.
+    -  `repository` represents as a place for modifying databases with query for example searching queries.
+    -  `service` represents as a place for business logic for our applications, makes our controller cleaner.
+    -  `util` represents as a place for helpers. Simplify and prevent calling a class repeatedly.
+  - `resources` usually represents as a place for database info credentials like `application.properties`
+- `test/java/com/projects` represents as a place for all testing we're gonna do. For example like unit testing, functional testing.
 
 
 ## Database Schema
