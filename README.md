@@ -5,7 +5,7 @@ Hello there! Welcome to our playground. We're here for having fun.
 
 
 ## What we're developing, Monola
-Description loading...
+Money for Now and Later...
 
 ## Table of Contents
 - [Monola Backend Team B Homey](#monola-backend-team-b-homey)
@@ -142,7 +142,7 @@ jwt.secret= {jwt-secret}
 ├── .mvn/wrapper
 ├── src
 |   ├── main
-|   |   ├── java/com/projects
+|   |   ├── java/com/monola
 |   |   |   ├── auth
 |   |   |   ├── configuration
 |   |   |   ├── controller
@@ -155,12 +155,12 @@ jwt.secret= {jwt-secret}
 |   |   |   ├── util
 |   |   ├── recources
 |   |   |   ├── application.properties
-|   ├── test/java/com/projects
+|   ├── test/java/com/monola
 ```
 
 ## Architecture Purpose
 - `main`
-  - `java/com/projects`
+  - `java/com/monola`
     -  `auth` represents as a place for all auth of the applications.
     -  `configuration` represents as a configuration needed as necessary need.
     -  `controller` represents as a place for interaction between applications and we're defining endpoint to provide client side.
@@ -169,10 +169,10 @@ jwt.secret= {jwt-secret}
     -  `model` represents as a place to define databases info. For example table, column, relations.
     -  `repository` represents as a place for modifying databases with query for example searching queries.
     -  `service` represents as a place for business logic for our applications, makes our controller cleaner.
-        -  `impl` represents as a implementation of service interface.
+        -  `impl` represents as an implementation of service interface.
     -  `util` represents as a place for helpers. Simplify and prevent calling a class repeatedly.
   - `resources` usually represents as a place for database info credentials like `application.properties`
-- `test/java/com/projects` represents as a place for all testing we're gonna do. For example like unit testing, functional testing.
+- `test/java/com/monola` represents as a place for all testing we're gonna do. For example like unit testing, functional testing.
 
 
 ## Database Schema
