@@ -143,11 +143,15 @@ jwt.secret= {jwt-secret}
 ├── src
 |   ├── main
 |   |   ├── java/com/projects
+|   |   |   ├── auth
+|   |   |   ├── configuration
 |   |   |   ├── controller
-|   |   |   ├── model
+|   |   |   ├── dto
 |   |   |   ├── exception
+|   |   |   ├── model
 |   |   |   ├── repository
 |   |   |   ├── service
+|   |   |   |   ├── impl
 |   |   |   ├── util
 |   |   ├── recources
 |   |   |   ├── application.properties
@@ -157,11 +161,15 @@ jwt.secret= {jwt-secret}
 ## Architecture Purpose
 - `main`
   - `java/com/projects`
-    - `controller` represents as a place for interaction between applications and we're defining endpoint to provide client side.
-    -  `model` represents as a place to define databases info. For example table, column, relations.
+    -  `auth` represents as a place for all auth of the applications.
+    -  `configuration` represents as a configuration needed as necessary need.
+    -  `controller` represents as a place for interaction between applications and we're defining endpoint to provide client side.
+    -  `dto` represents as a place that defining customization of attribute of entity for response needed.
     -  `exception` represents as a place that all custom handling errors we made to prevent unwanted things.
+    -  `model` represents as a place to define databases info. For example table, column, relations.
     -  `repository` represents as a place for modifying databases with query for example searching queries.
     -  `service` represents as a place for business logic for our applications, makes our controller cleaner.
+        -  `impl` represents as a implementation of service interface.
     -  `util` represents as a place for helpers. Simplify and prevent calling a class repeatedly.
   - `resources` usually represents as a place for database info credentials like `application.properties`
 - `test/java/com/projects` represents as a place for all testing we're gonna do. For example like unit testing, functional testing.
